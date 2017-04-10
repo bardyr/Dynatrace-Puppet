@@ -94,9 +94,6 @@ class dynatrace::role::server_update (
     ensure  => $ensure,
   } ->
 
-  wait_until_port_is_open { '9911':
-    ensure  => $ensure,
-  }
 
   if $collector_port != '6699' {
     wait_until_port_is_open { '6699':
